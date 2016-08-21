@@ -1,0 +1,18 @@
+db.xml做了数据库的配置
+
+mybatis-config.xml做了mybatis的一些配置比如二级缓存的开启
+
+spring-mvc.xml的作用是做springmvc的配置
+
+从配置文件中拿数据，要配置 配置文件的路径：<context:property-placeholder location="classpath:config/db.properties" />
+
+从getBean里能拿到对象,使用注解拿不到(null)，原因：http://ask.csdn.net/questions/238973
+因为你的注解是spring容器解析的，要想让注解能够生效的话是需要spring容器启动的，这就是web项目启动环境下使用的。
+你在junit里面测试，要想让Spring容器管理bean完成自动注入的话，可以使用Spring的junit测试工具(junit-4.9.jar + spring-test-4.2.5.RELEASE.jar)注解。
+
+使用mybatis注解的方式需要在Mapper中加注解，在db.xml中加bean才可以
+本项目中使用注解用到的类为:AnnotateUserMapper、UserProvider、AnnotateUserMapperTest、db.xml(<bean id="annotateUserMapper".../>)
+
+跑web项目的时候，需要将要加载的xml(spring-mvc.xml,db.xml)都放在web.xml下的contextConfigLocation下
+
+查看项目应用名：项目上右击鼠标-->Properties-->MyEclipse-->Web
