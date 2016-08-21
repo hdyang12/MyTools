@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ExcelAPI"
+  id="myeclipse.1463676767434"
+  context-root="/ExcelAPI"
+  j2ee-spec="5.0"
+  archive="ExcelAPI.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+
